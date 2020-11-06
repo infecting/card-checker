@@ -5,16 +5,18 @@ export default function Card({ card }) {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                        <th>balance</th>
-                        <th>cvv</th>
-                        <th>created at</th>
+                        <th>Card No.</th>
+                        <th>Balance</th>
+                        {card.cvv ? <th>CVV</th> : null}
+                        {card.createdAt ? <th>Created At</th> : null}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>{card.number}</td>
                         <td>{card.balance}</td>
-                        <td>{card.cvv}</td>
-                        <td>{card.createdAt}</td>
+                        {card.cvv ? <td>{card.cvv}</td> : null}
+                        {card.createdAt ? <td>{card.createdAt}</td> : null}
                     </tr>
                 </tbody>
             </table>
